@@ -15,10 +15,9 @@ public class Receipt{
                     item = scan.nextLine();
                 }
             order[items] += item + ", ";
-            System.out.println(order);
+            System.out.println(order[0]);
             items += 1;
             price += 5;
-            System.out.println(order);
             if (items == 5) {
                 System.out.println("You have reached the maximum amount of items!");
                 break;
@@ -29,9 +28,9 @@ public class Receipt{
                 break;
                 }
             }
-        for (int i = 0; i < Math.floor(order.toString().length() / 40); i ++) {
+        for (int i = 0; i < Math.max(1, Math.floor(order.toString().length() / 40)); i ++) {
             for (int j = 0; j < 40; j++) {
-                System.out.print(order[j]);
+                System.out.print(order.toString().charAt(j));
             }
             System.out.print("\n");
         }
