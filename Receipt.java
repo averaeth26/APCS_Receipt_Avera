@@ -9,6 +9,8 @@ public class Receipt{
         int num1 = scan.nextInt();
         System.out.print("Enter your other lucky number: ");
         int num2 = scan.nextInt();
-        System.out.println("Hello, " + name + "! Your Magic number is " + ((num1*num2)+10)*2 + "!");
+        System.out.print("Enter your other other lucky number: ");
+        int num3 = scan.nextInt();
+        System.out.println("Hello, " + name + "! Your Magic number is " + (((num1*num2)+10)*2)%num3 + "!");
     }
 }
