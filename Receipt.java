@@ -28,19 +28,26 @@ public class Receipt{
                 break;
                 }
             }
-            String receipt = "****************************************Your order is " + order + 
-            "|totaling " + items + " item(s)| The total for this order is $" + price + ".00|" +
-            "Thanks for shopping at Ethan's Epic Edimame, and we hope you have a great rest of your day!" + 
+            String receipt = "*****************************************Your order is " + order + 
+            "|totaling " + items + " item(s).|The total for this order is $" + price + ".00.|" +
+            "Thanks for shopping at Ethan's Epic Edimame, and we hope you have a great rest of your day!|" + 
             "****************************************";
-
-        for (int i = 0; i < Math.max(1, Math.floor(receipt.length() / 40)); i ++) {
-            for (int j = 0; j < Math.min(receipt.length(), 40); j++) {
-                if (receipt.charAt(i*40 + j) == '|') {
+        int i = 0;
+        while (true) {
+            for (int j = 0; j < 40; j++) {
+                i += 1;
+                if (receipt.charAt(i) == '|') {
                     System.out.println("");
-                    continue;
+                    break;
                 }
-                System.out.print(receipt.charAt(i*40 + j));
+                if (i == receipt.length() - 1) {
+                    break;
+                }
+                System.out.print(receipt.charAt(i));
             }
+            if (i == receipt.length() - 1) {
+                    break;
+                }
             System.out.print("\n");
         }
 
