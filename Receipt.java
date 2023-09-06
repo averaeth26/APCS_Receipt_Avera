@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-// Object Oriented Programming (OOP) describes objects in terms of prioperties and methods.
+// Object Oriented Programming (OOP) describes objects in terms of properties and methods.
 
 public class Receipt{
     public static void main(String[] args) {
@@ -53,8 +53,6 @@ public class Receipt{
                 }
             System.out.print("\n");
         }
-        scan.close();
-
-    
+        scan.close();    
     }
 }
