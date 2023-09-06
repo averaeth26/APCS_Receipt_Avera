@@ -29,12 +29,16 @@ public class Receipt{
                 }
             }
             String receipt = "****************************************Your order is " + order + 
-            "totaling " + items + " item(s)\n The total for this order is $" + price + ".00\n" +
+            "|totaling " + items + " item(s)| The total for this order is $" + price + ".00|" +
             "Thanks for shopping at Ethan's Epic Edimame, and we hope you have a great rest of your day!" + 
             "****************************************";
 
         for (int i = 0; i < Math.max(1, Math.floor(receipt.length() / 40)); i ++) {
             for (int j = 0; j < Math.min(receipt.length(), 40); j++) {
+                if (receipt.charAt(i*40 + j) == '|') {
+                    System.out.println("");
+                    continue;
+                }
                 System.out.print(receipt.charAt(i*40 + j));
             }
             System.out.print("\n");
