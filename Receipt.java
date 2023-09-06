@@ -4,7 +4,7 @@ public class Receipt{
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
         int items = 0;
-        String[] order = {"", "", "", "", ""};
+        String order = "";
         int price = 0;
         System.out.println("Hello, welcome to Ethan's Epic Edamame! Every item on the menu is $5!");
         while (true) {
@@ -14,8 +14,8 @@ public class Receipt{
                     System.out.print("That Item is not on the menu! Please try again: ");
                     item = scan.nextLine();
                 }
-            order[items] += item + ", ";
-            System.out.println(order[0]);
+            order += item + ", ";
+            System.out.println(order);
             items += 1;
             price += 5;
             if (items == 5) {
@@ -28,9 +28,14 @@ public class Receipt{
                 break;
                 }
             }
-        for (int i = 0; i < Math.max(1, Math.floor(order.toString().length() / 40)); i ++) {
-            for (int j = 0; j < 40; j++) {
-                System.out.print(order.toString().charAt(j));
+            String receipt = "****************************************Your order is " + order + 
+            "totaling " + items + " item(s)\n The total for this order is $" + price + ".00\n" +
+            "Thanks for shopping at Ethan's Epic Edimame, and we hope you have a great rest of your day!" + 
+            "****************************************";
+
+        for (int i = 0; i < Math.max(1, Math.floor(receipt.length() / 40)); i ++) {
+            for (int j = 0; j < Math.min(receipt.length(), 40); j++) {
+                System.out.print(receipt.charAt(i*40 + j));
             }
             System.out.print("\n");
         }
