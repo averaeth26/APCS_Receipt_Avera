@@ -8,11 +8,12 @@ public class Receipt{
         int items = 0;
         String order = "";
         int price = 0;
-        System.out.println("Hello, welcome to Ethan's Epic Edamame! Every item on the menu is $5!");
+        System.out.println("Hello, welcome to Ethan's Epic Edamame! Every item on the menu is $5!\nOur Menu includes:");
+        System.out.println("- Edamame\n- Sour Edamame\n- Red Edamame\n- Lobster Edamame\n- Vegan Edamame\n- Salty Edamame\n- Edamame Nuggets\n- Fried Edamame\n- Steamed Edamame\n- Frozen Edamame\n- Edamargarita\n- Edamarmalade");
         while (true) {
             System.out.print("What would you like to order?: ");
             String item = scan.nextLine();
-            while (!item.toLowerCase().contains("edamame")) {
+            while (!(item.toLowerCase().contains("edamame") || item.toLowerCase().contains("edamargarita") || item.toLowerCase().contains("edamarmalade"))) {
                     System.out.print("That item is not on the menu! Please try again: ");
                     item = scan.nextLine();
                 }
@@ -30,7 +31,7 @@ public class Receipt{
                 break;
                 }
             }
-            String receipt = "*****************************************Your order is " + order + 
+            String receipt = "||****************************************Your order is " + order + 
             "|totaling " + items + " item(s).|The total for this order is $" + price + ".00.|" +
             "Thanks for shopping at Ethan's Epic Edimame, and we hope you have a great rest of your day!|" + 
             "****************************************";
