@@ -1,5 +1,7 @@
 import java.util.Scanner;
 
+// Object Oriented Programming (OOP) describes objects in terms of prioperties and methods.
+
 public class Receipt{
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
@@ -11,7 +13,7 @@ public class Receipt{
             System.out.print("What would you like to order?: ");
             String item = scan.nextLine();
             while (!item.toLowerCase().contains("edamame")) {
-                    System.out.print("That Item is not on the menu! Please try again: ");
+                    System.out.print("That item is not on the menu! Please try again: ");
                     item = scan.nextLine();
                 }
             order += item + ", ";
@@ -50,6 +52,7 @@ public class Receipt{
                 }
             System.out.print("\n");
         }
+        scan.close();
 
     
     }
